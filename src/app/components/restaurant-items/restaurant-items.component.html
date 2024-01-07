@@ -1,0 +1,34 @@
+<ngx-ui-loader></ngx-ui-loader>
+<div class="container mt-5"> 
+  <div class="row">
+      <div class="col-4" *ngFor="let item of items">
+          <div class="card card-food" (click)="navigate(item)"> 
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-5">
+                          <img [src]="item.photoUrl" class="card-img-top food-item" alt="Pav Bhaji">
+                         
+                      </div>
+                      <div class="col-7 text-right" style="text-align: right;">
+                          <i class="fa-regular fa-heart"></i>
+                          <h4  >{{item.menuItemName}}</h4> 
+                          <small>{{item.description |slice:0:35}}</small> 
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-5">
+                          <h4 class=""> {{item.restaurantName}}</h4>
+                      </div>
+                      <div class="col-7 text-right" style="text-align: right;">
+                          <h6 ><i class="fa-regular fa-star"></i></h6>
+                      </div>
+                  </div>
+                 
+              </div>
+          </div>  
+      </div>
+      <div class="col-12 text-center" *ngIf="items.length == 0">
+          <h5>No Restaurant Serving At Moment</h5>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="food-category">  <img src="assets/Zomato_company_logo.png" style="width: 110px;display: block;margin-left: 25px;" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+       
+    </ul>
+    <form class="form-inline my-2 my-lg-0"> 
+      <a *ngIf="!loggedObj?.userName" class="navbar-brand btn btn-outline-success" routerLink="login">Login</a> 
+      <a *ngIf="loggedObj?.userName" class="navbar-brand capital-letter">{{loggedObj?.userName}}</a> 
+      <a *ngIf="loggedObj?.userName" class="navbar-brand btn btn-outline-success" (click)="logout()">LogOff</a> 
+    </form>
+  </div>
+</nav> 
+<router-outlet></router-outlet> 
+<footer class="footer py-2 mt-2">
+  <div class="container text-center">
+      <p>&copy; 2023 Zomato Item List. All rights reserved.</p>
+  </div>
+</footer>
